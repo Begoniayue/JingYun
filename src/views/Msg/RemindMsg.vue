@@ -3,7 +3,9 @@ import useClipboard from "vue-clipboard3";
 const { toClipboard } = useClipboard();
 import {message} from "ant-design-vue";
 import {CopyOutlined,CheckOutlined} from '@ant-design/icons-vue'
-const requestUrl = ref('/Login/UpdateDeviceToken')
+const title = ref('发送提醒消息')
+const requestUrl = ref('/Msg/RemindMsg')
+const requestFn = ref('POST')
 const columns = [
   {
     title: '参数名',
@@ -44,16 +46,34 @@ const returnColumns = [
   },
 ]
 const requestList = ref([
+
   {
-    name: 'wxid',
-    flag: '是',
-    type:'string',
-    interpretation: '请输入登陆成功的wxid',
-  }, {
-    name: 'Model',
-    flag: '是',
+    name: 'Content',
+    flag: '否',
     type:'string',
     interpretation: '',
+  },{
+    name: 'Ycontent',
+    flag: '否',
+    type:'string',
+    interpretation: '提醒内容 比如(楼上这位是本群的监督员)',
+  },{
+    name: 'Ytitle',
+    flag: '否',
+    type:'string',
+    interpretation: '提醒名 比如(官方提醒)',
+  },
+    {
+    name: 'ToWxid',
+    flag: '否',
+    type:'string',
+    interpretation: 'ToWxids用,隔开',
+  },
+    {
+    name: 'Wxid',
+    flag: '否',
+    type:'string',
+    interpretation: 'Wxid == 微信id 多个wxid请用,隔开',
   }
 ])
 const returnList = ref([
@@ -75,8 +95,11 @@ const returnList = ref([
 ])
 
 const code = ref('{\n' +
-    '  "Wxid": "string"\n' +
-    '  "Model": "string"\n' +
+    '    "Content": "string",\n' +
+    '    "ToWxid": "string",\n' +
+    '    "Wxid": "string",\n' +
+    '    "Ycontent": "string",\n' +
+    '    "Ytitle": "string"\n' +
     '}')
 const data = ref('{\n' +
     ' "code": "number",\n' +
@@ -108,14 +131,14 @@ const copyCode = (text, type) => {
 <template>
   <div class="user-content">
     <div class="header">
-      DeviceToken更新
+      {{title}}
     </div>
     <div class="user-body">
       <div class="api-tag">
         <a-tooltip>
           <template #title>请求方法</template>
           <span>
-            <a-tag color="#108ee9">POST</a-tag>
+            <a-tag color="#108ee9">{{ requestFn }}</a-tag>
           </span>
         </a-tooltip>
         <a-tooltip>

@@ -3,7 +3,9 @@ import useClipboard from "vue-clipboard3";
 const { toClipboard } = useClipboard();
 import {message} from "ant-design-vue";
 import {CopyOutlined,CheckOutlined} from '@ant-design/icons-vue'
-const requestUrl = ref('/Login/UpdateDeviceToken')
+const title = ref('隐私设置')
+const requestUrl = ref('/User/PrivacySettings')
+const requestFn = ref('POST')
 const columns = [
   {
     title: '参数名',
@@ -45,16 +47,23 @@ const returnColumns = [
 ]
 const requestList = ref([
   {
-    name: 'wxid',
-    flag: '是',
+    name: 'Wxid',
+    flag: '否',
     type:'string',
-    interpretation: '请输入登陆成功的wxid',
-  }, {
-    name: 'Model',
-    flag: '是',
-    type:'string',
-    interpretation: '',
-  }
+    interpretation: '微信id',
+  },
+  {
+    name: 'Function',
+    flag: '否',
+    type:'integer',
+    interpretation: '核心参数请联系客服获取代码列表',
+  },
+  {
+    name: 'Value',
+    flag: '否',
+    type:'integer',
+    interpretation: '核心参数请联系客服获取代码列表',
+  },
 ])
 const returnList = ref([
   {
@@ -75,8 +84,9 @@ const returnList = ref([
 ])
 
 const code = ref('{\n' +
-    '  "Wxid": "string"\n' +
-    '  "Model": "string"\n' +
+    '    "Function": 0,\n' +
+    '    "Value": 0,\n' +
+    '    "Wxid": "string"\n' +
     '}')
 const data = ref('{\n' +
     ' "code": "number",\n' +
@@ -108,14 +118,14 @@ const copyCode = (text, type) => {
 <template>
   <div class="user-content">
     <div class="header">
-      DeviceToken更新
+      {{title}}
     </div>
     <div class="user-body">
       <div class="api-tag">
         <a-tooltip>
           <template #title>请求方法</template>
           <span>
-            <a-tag color="#108ee9">POST</a-tag>
+            <a-tag color="#108ee9">{{ requestFn }}</a-tag>
           </span>
         </a-tooltip>
         <a-tooltip>

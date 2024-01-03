@@ -48,7 +48,7 @@ const returnColumns = [
 const requestList = ref([
   {
     name: 'Wxid',
-    flag: '否',
+    flag: '是',
     type:'string',
     interpretation: '微信id',
   }

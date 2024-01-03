@@ -164,7 +164,7 @@ const copyCode = (text, type) => {
         <a-tooltip>
           <template #title>请求方法</template>
           <span>
-            <a-tag color="#108ee9">GET</a-tag>
+            <a-tag color="#108ee9">POST</a-tag>
           </span>
         </a-tooltip>
         <a-tooltip>

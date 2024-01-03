@@ -40,8 +40,9 @@ const handleClick = (e) => {
 <template>
   <a-layout>
     <a-layout-header :style="headerStyle" class="header">
-      <span class="logo">鲸云</span>
-      接口Api协议
+      <span class="logo">
+        <img src="@/assets/logo.jpg" width="180px">
+      </span>
     </a-layout-header>
     <a-layout>
       <a-layout-sider :style="siderStyle" width="248">
@@ -62,7 +63,7 @@ const handleClick = (e) => {
 
 <style scoped lang="less">
 .header {
-  height: 50px;
+  height: 64px;
   line-height: 50px;
   padding-left: 24px;
   border-bottom: 1px solid #e8e8e8;

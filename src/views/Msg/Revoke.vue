@@ -3,7 +3,9 @@ import useClipboard from "vue-clipboard3";
 const { toClipboard } = useClipboard();
 import {message} from "ant-design-vue";
 import {CopyOutlined,CheckOutlined} from '@ant-design/icons-vue'
-const requestUrl = ref('/Login/UpdateDeviceToken')
+const title = ref('撤回消息')
+const requestUrl = ref('/Msg/Revoke')
+const requestFn = ref('POST')
 const columns = [
   {
     title: '参数名',
@@ -44,14 +46,32 @@ const returnColumns = [
   },
 ]
 const requestList = ref([
+
   {
-    name: 'wxid',
-    flag: '是',
+    name: 'ClientMsgId',
+    flag: '否',
+    type:'integer',
+    interpretation: '',
+  },{
+    name: 'CreateTime',
+    flag: '否',
+    type:'integer',
+    interpretation: '',
+  },{
+    name: 'NewMsgId',
+    flag: '否',
+    type:'integer',
+    interpretation: '',
+  },
+  {
+    name: 'ToUserName',
+    flag: '否',
     type:'string',
-    interpretation: '请输入登陆成功的wxid',
-  }, {
-    name: 'Model',
-    flag: '是',
+    interpretation: '',
+  },
+  {
+    name: 'Wxid',
+    flag: '否',
     type:'string',
     interpretation: '',
   }
@@ -75,8 +95,11 @@ const returnList = ref([
 ])
 
 const code = ref('{\n' +
-    '  "Wxid": "string"\n' +
-    '  "Model": "string"\n' +
+    '    "ClientMsgId": 0,\n' +
+    '    "CreateTime": 0,\n' +
+    '    "NewMsgId": 0,\n' +
+    '    "ToUserName": "string",\n' +
+    '    "Wxid": "string"\n' +
     '}')
 const data = ref('{\n' +
     ' "code": "number",\n' +
@@ -108,14 +131,14 @@ const copyCode = (text, type) => {
 <template>
   <div class="user-content">
     <div class="header">
-      DeviceToken更新
+      {{title}}
     </div>
     <div class="user-body">
       <div class="api-tag">
         <a-tooltip>
           <template #title>请求方法</template>
           <span>
-            <a-tag color="#108ee9">POST</a-tag>
+            <a-tag color="#108ee9">{{ requestFn }}</a-tag>
           </span>
         </a-tooltip>
         <a-tooltip>

@@ -130,72 +130,123 @@ const items = [
       },
       {
         key: '3-7',
-        label: '绑定钉钉',
-      }
+        label: '登录设备管理',
+        path: '/GetSafetyInfo',
+      },
+      {
+        key: '3-8',
+        label: '一键修改密码',
+        path: '/OnekeySetPasswd',
+      },
+      {
+        key: '3-9',
+        label: '隐私设置',
+        path: '/PrivacySettings',
+      },
+      {
+        key: '3-10',
+        label: 'ReportMotion',
+        path: '/ReportMotion',
+      },
+      {
+        key: '3-11',
+        label: '修改微信号(一年一次)',
+        path: '/ReviseAlisa',
+      },
+      {
+        key: '3-12',
+        label: '设置微信号',
+        path: '/SetAlisa',
+      },
+      {
+        key: '3-13',
+        label: '修改密码',
+        path: '/SetPasswd',
+      },
+      {
+        key: '3-14',
+        label: '修改个人信息',
+        path: '/UpdateProfile',
+      },
+      {
+        key: '3-15',
+        label: '修改头像',
+        path: '/UploadHeadImage',
+      },
     ]
   },
   {
     key: '4',
-    label: '好友操作',
-    path: '/User',
+    label: '消息发送',
+    path: '/SendTxt',
     children: [
       {
         key: '4-1',
-        label: '附近人',
-        path: '/User',
+        label: '发送文本消息',
+        path: '/SendTxt',
       },
       {
         key: '4-2',
-        label: '添加/移除黑名单',
-        path: '/User',
+        label: '批量发送文本消息',
+        path: '/BatchSendMsg',
       },
       {
         key: '4-3',
-        label: '删除好友',
-        path: '/User',
-      }]
-    },
-  {
-    key: '5',
-    label: '群组操作',
-    path: '/User',
-    children: [
-      {
-        key: '5-1',
-        label: '创建群组',
-        path: '/User',
+        label: '发送提醒消息',
+        path: '/RemindMsg',
       },
       {
-        key: '5-2',
-        label: '加入群组',
-        path: '/User',
+        key: '4-4',
+        label: '批量发送提醒消息',
+        path: '/Revoke',
       },
       {
-        key: '5-3',
-        label: '退出群组',
-        path: '/User',
-      }]
-    },
-  {
-    key: '6',
-    label: '朋友圈操作',
-    path: '/User',
-    children: [
-      {
-        key: '6-1',
-        label: '群组消息',
-        path: '/User',
+        key: '4-5',
+        label: '发送App消息',
+        path: '/SendApp',
       },
       {
-        key: '6-2',
-        label: '群组消息详情',
-        path: '/User',
+        key: '4-6',
+        label: '发送文件(转发,并非上传)',
+        path: '/SendCDNFile',
       },
       {
-        key: '6-3',
-        label: '群组消息撤回',
-      }]
-    },
+        key: '4-7',
+        label: '发送Cdn图片(转发图片)',
+        path: '/SendCDNImg',
+      },
+      {
+        key: '4-8',
+        label: '发送Cdn视频(转发视频)',
+        path: '/SendCDNVideo',
+      },
+      {
+        key: '4-9',
+        label: '发送Emoji',
+        path: '/SendEmoji',
+      },
+      {
+        key: '4-10',
+        label: '群发文字',
+        path: '/SendGroupMassMsgText',
+      },
+      {
+        key: '4-11',
+        label: '转发聊天记录',
+        path: '/SendTransmitMsg',
+      },
+      {
+        key: '4-12',
+        label: '发送分享视频消息',
+        path: '/ShareVideo',
+      },
+      {
+        key: '4-13',
+        label: '发送图片',
+        path: '/UploadImg',
+      },
+      ]
+  },
   {
     label: '接口测试',
     path: '/',

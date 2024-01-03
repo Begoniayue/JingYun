@@ -3,7 +3,7 @@ import useClipboard from "vue-clipboard3";
 const { toClipboard } = useClipboard();
 import {message} from "ant-design-vue";
 import {CopyOutlined,CheckOutlined} from '@ant-design/icons-vue'
-const title = ref('取个人二维码')
+const title = ref('获取个人二维码')
 const requestUrl = ref('/User/GetQRCode')
 const columns = [
   {
@@ -48,7 +48,7 @@ const requestList = ref([
   {
     name: 'Style',
     flag: '否',
-    type:'integer',
+    type:'string',
     interpretation: 'Style',
   },{
     name: 'Wxid',

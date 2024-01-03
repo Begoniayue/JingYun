@@ -52,6 +52,11 @@ const requestList = ref([
     type:'string',
     interpretation: 'Email',
   },{
+    name: 'Verifycode',
+    flag: '否',
+    type:'string',
+    interpretation: 'Email',
+  },{
     name: 'Wxid',
     flag: '否',
     type:'string',

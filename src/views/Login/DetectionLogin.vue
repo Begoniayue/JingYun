@@ -48,12 +48,12 @@ const requestList = ref([
   {
     name: 'uuid',
     flag: '是',
-    type:'integer',
+    type:'string',
     interpretation: '请输入取码时返回的UUID',
   },{
     name: 'domain',
     flag: '否',
-    type:'integer',
+    type:'string',
     interpretation: '外国号写:1,否则忽略',
   }
 ])
@@ -115,7 +115,7 @@ const copyCode = (text, type) => {
         <a-tooltip>
           <template #title>请求方法</template>
           <span>
-            <a-tag color="#108ee9">GET</a-tag>
+            <a-tag color="#108ee9">POST</a-tag>
           </span>
         </a-tooltip>
         <a-tooltip>

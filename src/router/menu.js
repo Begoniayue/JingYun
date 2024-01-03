@@ -172,9 +172,121 @@ const routes = [
         path: '/GetUserInfo',
         name: 'GetUserInfo',
         component: () => import('@/views/User/GetQRCode.vue'),
-      }
+      },
+      {
+        path: '/GetSafetyInfo',
+        name: 'GetSafetyInfo',
+        component: () => import('@/views/User/GetSafetyInfo.vue'),
+      },
+      {
+        path: '/OnekeySetPasswd',
+        name: 'OnekeySetPasswd',
+        component: () => import('@/views/User/OnekeySetPasswd.vue'),
+      },
+      {
+        path: '/PrivacySettings',
+        name: 'PrivacySettings',
+        component: () => import('@/views/User/PrivacySettings.vue'),
+      },
+      {
+        path: '/ReportMotion',
+        name: 'ReportMotion',
+        component: () => import('@/views/User/ReportMotion.vue'),
+      },
+      {
+        path: '/ReviseAlisa',
+        name: 'ReviseAlisa',
+        component: () => import('@/views/User/ReviseAlisa.vue'),
+      },
+      {
+        path: '/SetAlisa',
+        name: 'SetAlisa',
+        component: () => import('@/views/User/SetAlisa.vue'),
+      },
+      {
+        path: '/SetPasswd',
+        name: 'SetPasswd',
+        component: () => import('@/views/User/SetPasswd.vue'),
+      },
+      {
+        path: '/UpdateProfile',
+        name: 'UpdateProfile',
+        component: () => import('@/views/User/UpdateProfile.vue'),
+      },
+      {
+        path: '/UploadHeadImage',
+        name: 'UploadHeadImage',
+        component: () => import('@/views/User/UploadHeadImage.vue'),
+      },
     ],
   },
+  {
+    path: '/SendTxt',
+    name: 'SendTxt',
+    component: container,
+    children: [
+      {
+        path: '/SendTxt',
+        name: 'SendTxt',
+        component: () => import('@/views/Msg/SendTxt.vue'),
+      },
+      {
+        path: '/BatchSendMsg',
+        name: 'BatchSendMsg',
+        component: () => import('@/views/Msg/BatchSendMsg.vue'),
+      },
+      {
+        path: '/RemindMsg',
+        name: 'RemindMsg',
+        component: () => import('@/views/Msg/RemindMsg.vue'),
+      },
+      {
+        path: '/Revoke',
+        name: 'Revoke',
+        component: () => import('@/views/Msg/Revoke.vue'),
+      },
+      {
+        path: '/SendApp',
+        name: 'SendApp',
+        component: () => import('@/views/Msg/SendApp.vue'),
+      },
+      {
+        path: '/SendCDNFile',
+        name: 'SendCDNFile',
+        component: () => import('@/views/Msg/SendCDNFile.vue'),
+      },
+      {
+        path: '/SendGroupMassMsgText',
+        name: 'SendGroupMassMsgText',
+        component: () => import('@/views/Msg/SendGroupMassMsgText.vue'),
+      },
+      {
+        path: '/SendCDNVideo',
+        name: 'SendCDNVideo',
+        component: () => import('@/views/Msg/SendCDNVideo.vue'),
+      },
+      {
+        path: '/SendCDNImg',
+        name: 'SendCDNImg',
+        component: () => import('@/views/Msg/SendCDNImg.vue'),
+      },
+      {
+        path: '/SendTransmitMsg',
+        name: 'SendTransmitMsg',
+        component: () => import('@/views/Msg/SendTransmitMsg.vue'),
+      },
+      {
+        path: '/ShareVideo',
+        name: 'ShareVideo',
+        component: () => import('@/views/Msg/ShareVideo.vue'),
+      },
+      {
+        path: '/UploadImg',
+        name: 'UploadImg',
+        component: () => import('@/views/Msg/UploadImg.vue'),
+      }
+    ]
+    },
 
   /* 所有找不到的路由都会跳转到404页面 */
   {
