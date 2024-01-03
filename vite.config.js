@@ -9,6 +9,7 @@ import AntdResolver from 'unplugin-auto-import-antd'
 export default defineConfig(({mode})=>{
   const env = loadEnv(mode, process.cwd());
   return {
+    base: "/JingYun/",
     plugins: [
       vue(),
       AutoImport({
